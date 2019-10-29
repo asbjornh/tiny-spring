@@ -43,23 +43,23 @@ spring.destroy();
 
 Create a new `Spring` instance.
 
-### `SpringConfig`
+### `SpringConfig (object)`
 
 `stiffness: number = 200`
 
 Stiffness controls how "fast" your animation will be. Higher values result in faster motion.
 
-`damping: number = 10`
+**`damping: number = 10`**
 
 Damping controls how much friction is applied to the spring. You can think about this as how "wobbly" the resulting motion is. Lower values result in more wobbly-ness.
 
-`precision: number = 0.1`
+**`precision: number = 0.1`**
 
 Used to determine when animation is complete. With a precision of `0` the spring will often keep animating forever. With really high values (like `100`) there will be a noticable "stutter" at the end of the animation.
 
 ### `Spring`
 
-`onUpdate(fn: (val: number): void)`
+**`onUpdate(fn: (val: number): void)`**
 
 Add a callback which will be called every time the value of the spring changes. This method is how you make animations happen.
 
@@ -71,14 +71,14 @@ spring.onUpdate(value => {
 });
 ```
 
-`setValue(value: number)`
+**`setValue(value: number)`**
 
 Set the value of the spring without animating.
 
-`transitionTo(value: number)`
+**`transitionTo(value: number)`**
 
 Set the end value of the spring. When calling this, the spring will begin animating.
 
-`destroy()`
+**`destroy()`**
 
 Aborts animation and removes any callbacks.
