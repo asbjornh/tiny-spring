@@ -45,7 +45,7 @@ Create a new `Spring` instance.
 
 ### `SpringConfig (object)`
 
-`stiffness: number = 200`
+**`stiffness: number = 200`**
 
 Stiffness controls how "fast" your animation will be. Higher values result in faster motion.
 
@@ -77,7 +77,7 @@ Set the value of the spring without animating.
 
 **`transitionTo(value: number)`**
 
-Set the end value of the spring. When calling this, the spring will begin animating.
+Start animating to `value` from the current value of the spring.
 
 **`destroy()`**
 
