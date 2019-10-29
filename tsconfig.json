@@ -1,0 +1,7 @@
+{
+  "files": ["./spring.ts"],
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs"
+  }
+}

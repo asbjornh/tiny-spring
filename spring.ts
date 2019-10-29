@@ -6,7 +6,7 @@ export default function Spring(
   let endPosition = 0;
   let secPerFrame = 1 / 60;
   let velocity = 0;
-  let onUpdate = () => {};
+  let onUpdate = v => {};
   let raf;
 
   const interpolate = () => {
@@ -39,7 +39,7 @@ export default function Spring(
       endPosition = v;
       interpolate();
     },
-    onUpdate: (fn = () => {}) => {
+    onUpdate: (fn = v => {}) => {
       onUpdate = fn;
       fn(position);
     },

@@ -1,6 +1,6 @@
 # tiny-spring
 
-Simple spring dynamics for physics-driven animations. Also it's tiny (2kB / 700B gzipped).
+Simple spring dynamics for physics-driven animations. Also it's tiny (2kB / 600B gzipped).
 
 ```
 npm install tiny-spring

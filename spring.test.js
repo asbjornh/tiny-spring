@@ -3,8 +3,10 @@ const test = require('ava');
 global.requestAnimationFrame = func => setTimeout(func, 16);
 global.cancelAnimationFrame = id => clearTimeout(id);
 
+const packageJson = require('./package.json');
+
 // NOTE: Import from built source rather than source
-const Spring = require('./index').default;
+const Spring = require(packageJson.main).default;
 
 test('Initial value', t => {
   let value = 0;
