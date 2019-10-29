@@ -1,17 +1,25 @@
 {
   "name": "tiny-spring",
   "description": "Simple spring dynamics for physics-driven animations",
-  "keywords": ["spring", "animated", "animation", "physics", "spring dynamics"],
+  "keywords": [
+    "spring",
+    "animated",
+    "animation",
+    "physics",
+    "spring dynamics"
+  ],
   "version": "0.1.0",
   "author": "Asbjørn Hegdahl",
   "license": "MIT",
   "scripts": {
+    "build": "babel ./spring.js --out-file ./index.js",
     "dev": "webpack-dev-server --mode=development",
     "lint": "eslint --ext js,jsx ./source",
     "lint:fix": "eslint --ext js,jsx ./source --fix"
   },
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.0.0",

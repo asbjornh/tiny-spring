@@ -1,4 +1,4 @@
-import Spring from '../source/spring';
+import Spring from '../spring';
 
 const spring = new Spring();
 
