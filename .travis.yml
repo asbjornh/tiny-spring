@@ -1,0 +1,15 @@
+language: node_js
+node_js: 'lts/*'
+cache: yarn
+install: yarn
+script:
+  - yarn lint
+  - yarn build
+  - yarn test:ci
+deploy:
+  provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_TOKEN
+  on:
+    branch: master
+  skip_cleanup: true
