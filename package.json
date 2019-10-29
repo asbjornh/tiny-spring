@@ -15,7 +15,9 @@
     "build": "babel ./spring.js --out-file ./index.js",
     "dev": "webpack-dev-server --mode=development",
     "lint": "eslint --ext js,jsx ./source",
-    "lint:fix": "eslint --ext js,jsx ./source --fix"
+    "lint:fix": "eslint --ext js,jsx ./source --fix",
+    "test": "yarn build && ava",
+    "test:ci": "ava"
   },
   "dependencies": {},
   "devDependencies": {
@@ -23,6 +25,7 @@
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "ava": "^2.4.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.0",
     "css-loader": "^2.0.0",
