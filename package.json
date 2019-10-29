@@ -1,5 +1,6 @@
 {
   "name": "tiny-spring",
+  "version": "0.2.0",
   "description": "Simple spring dynamics for physics-driven animations",
   "keywords": [
     "spring",
@@ -8,7 +9,6 @@
     "physics",
     "spring dynamics"
   ],
-  "version": "0.1.0",
   "author": "Asbjørn Hegdahl",
   "license": "MIT",
   "scripts": {

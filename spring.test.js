@@ -6,21 +6,28 @@ global.cancelAnimationFrame = id => clearTimeout(id);
 // NOTE: Import from built source rather than source
 const Spring = require('./index').default;
 
-test("Can be new'ed", t => {
-  const spring = new Spring();
-  t.is(true, spring instanceof Spring);
-});
-
 test('Initial value', t => {
-  const spring = new Spring(100);
-  t.is(100, spring.position);
+  let value = 0;
+  const spring = Spring(100);
+  spring.onUpdate(v => (value = v));
+  t.is(100, value);
 });
 
 test.cb('Config', t => {
-  const s1 = new Spring(0);
-  const s2 = new Spring(0, { stiffness: 500 });
-  const s3 = new Spring(0, { damping: 40 });
-  const s4 = new Spring(0, { precision: 20 });
+  let v1 = 0;
+  let v2 = 0;
+  let v3 = 0;
+  let v4 = 0;
+
+  const s1 = Spring(0);
+  const s2 = Spring(0, { stiffness: 500 });
+  const s3 = Spring(0, { damping: 40 });
+  const s4 = Spring(0, { precision: 20 });
+
+  s1.onUpdate(v => (v1 = v));
+  s2.onUpdate(v => (v2 = v));
+  s3.onUpdate(v => (v3 = v));
+  s4.onUpdate(v => (v4 = v));
 
   s1.transitionTo(100);
   s2.transitionTo(100);
@@ -28,36 +35,40 @@ test.cb('Config', t => {
   s4.transitionTo(100);
 
   setTimeout(() => {
-    t.not(s1.position, s2.position);
-    t.not(s1.position, s3.position);
-    t.not(s1.position, s4.position);
+    t.not(v1, v2);
+    t.not(v1, v3);
+    t.not(v1, v4);
     t.end();
   }, 500);
 });
 
 test('setValue', t => {
-  const spring = new Spring();
-  t.is(0, spring.position);
+  let value = 0;
+  const spring = Spring();
+  spring.onUpdate(v => (value = v));
+  t.is(0, value);
   spring.setValue(100);
-  t.is(100, spring.position);
+  t.is(100, value);
 });
 
 test.cb('transitionTo', t => {
-  const spring = new Spring();
+  let value = 0;
+  const spring = Spring();
+  spring.onUpdate(v => (value = v));
   spring.transitionTo(100);
 
   setTimeout(() => {
-    t.is(true, spring.position > 0);
+    t.is(true, value > 0);
 
     setTimeout(() => {
-      t.is(100, spring.position);
+      t.is(100, value);
       t.end();
     }, 2000);
   }, 500);
 });
 
 test.cb('onUpdate', t => {
-  const spring = new Spring();
+  const spring = Spring();
   const endValue = 100;
   let values = [];
   spring.onUpdate(v => (values = values.concat(v)));

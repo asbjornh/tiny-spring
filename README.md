@@ -1,6 +1,6 @@
 # tiny-spring
 
-Simple spring dynamics for physics-driven animations. Also it's tiny (4kB / 1kB gzipped).
+Simple spring dynamics for physics-driven animations. Also it's tiny (2kB / 700B gzipped).
 
 ```
 npm install tiny-spring
@@ -21,7 +21,7 @@ If you want to use this with `React.js`, there is [use-spring-effect](https://ww
 ```js
 import Spring from 'tiny-spring';
 
-const spring = new Spring();
+const spring = Spring();
 const element = document.getElementById('some-id');
 
 spring.onUpdate(val => {
@@ -43,9 +43,9 @@ spring.destroy();
 
 ## API
 
-### `new Spring(initialValue: number, config: SpringConfig): Spring`
+### `Spring(initialValue: number, config: SpringConfig): spring`
 
-Create a new `Spring` instance.
+Returns a new `spring`.
 
 ### `SpringConfig (object)`
 
@@ -61,7 +61,7 @@ Damping controls how much friction is applied to the spring. You can think about
 
 Used to determine when animation is complete. With a precision of `0` the spring will often keep animating forever. With really high values (like `100`) there will be a noticable "stutter" at the end of the animation.
 
-### `Spring`
+### `spring (object)`
 
 **`onUpdate(fn: (val: number): void)`**
 
