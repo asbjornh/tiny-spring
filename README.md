@@ -2,6 +2,10 @@
 
 Simple spring dynamics for physics-driven animations. Also it's tiny (4kB / 1kB gzipped).
 
+```
+npm install tiny-spring
+```
+
 This small library exposes a `String` class that can be used to interpolate between values using spring dynamics.
 
 There are no DOM-methods or other framework-specific things included, which means you can use with whatever framework you want.
