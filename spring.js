@@ -22,7 +22,7 @@ export default class Spring {
     this.callback(position);
   }
 
-  setEndValue(position = 0) {
+  transitionTo(position = 0) {
     cancelAnimationFrame(this.raf);
     this.endPosition = position;
     this.interpolate();

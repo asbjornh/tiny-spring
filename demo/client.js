@@ -12,5 +12,5 @@ spring.onUpdate(val => {
 let value = 0;
 button.addEventListener('click', () => {
   value = value === 0 ? 300 : 0;
-  spring.setEndValue(value);
+  spring.transitionTo(value);
 });
