@@ -1,6 +1,6 @@
 {
   "name": "tiny-spring",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple spring dynamics for physics-driven animations",
   "keywords": [
     "spring",
@@ -13,8 +13,8 @@
   "license": "MIT",
   "main": "./spring.js",
   "files": [
-    "./spring.js",
-    "./spring.d.ts",
+    "spring.js",
+    "spring.d.ts",
     "LICENSE",
     "README.md"
   ],

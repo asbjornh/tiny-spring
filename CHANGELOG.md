@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- Fixes missing files!
+
 ## 0.2.0
 
 - Refactors from class to function. `new` keyword is no longer necessary.
