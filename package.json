@@ -14,8 +14,7 @@
   "scripts": {
     "build": "babel ./spring.js --out-file ./index.js",
     "dev": "webpack-dev-server --mode=development",
-    "lint": "eslint --ext js,jsx ./source",
-    "lint:fix": "eslint --ext js,jsx ./source --fix",
+    "lint": "eslint ./spring.js --max-warnings 0",
     "test": "yarn build && ava",
     "test:ci": "ava"
   },
