@@ -1,0 +1,15 @@
+html {
+  font-family: sans-serif;
+}
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: salmon;
+  pointer-events: none;
+}
+
+.demo-wrapper {
+  overflow: hidden;
+  background-color: whitesmoke;
+  height: 500px;
+}

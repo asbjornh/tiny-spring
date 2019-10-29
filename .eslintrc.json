@@ -1,0 +1,44 @@
+{
+  "root": true,
+  "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "prettier"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "classes": true
+    },
+    "sourceType": "module"
+  },
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto",
+        "singleQuote": true
+      }
+    ],
+    "strict": 0,
+    "eqeqeq": 1,
+    "no-console": 1,
+    "no-irregular-whitespace": 1,
+    "no-use-before-define": [2, "nofunc"],
+    "no-unused-vars": [
+      1,
+      {
+        "vars": "all",
+        "args": "after-used",
+        "argsIgnorePattern": "(^_|^next$)"
+      }
+    ],
+    "arrow-parens": [1, "as-needed"],
+    "no-dupe-keys": 2,
+    "no-dupe-args": 2,
+    "semi": 1
+  }
+}
