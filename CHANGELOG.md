@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2
+
+- Fixes fast, consecutive updates animating way too fast
+
 ## 0.2.1
 
 - Fixes missing files!

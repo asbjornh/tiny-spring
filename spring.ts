@@ -37,7 +37,7 @@ export default function Spring(
     transitionTo: (v = 0) => {
       cancelAnimationFrame(raf);
       endPosition = v;
-      interpolate();
+      raf = requestAnimationFrame(interpolate);
     },
     onUpdate: (fn = v => {}) => {
       onUpdate = fn;
