@@ -57,9 +57,9 @@ Stiffness controls how "fast" your animation will be. Higher values result in fa
 
 Damping controls how much friction is applied to the spring. You can think about this as how "wobbly" the resulting motion is. Lower values result in more wobbly-ness.
 
-**`precision: number = 0.1`**
+**`precision: number = 100`**
 
-Used to determine when animation is complete. With a precision of `0` the spring will often keep animating forever. With really high values (like `100`) there will be a noticable "stutter" at the end of the animation.
+Used to determine when to stop animating. With a precision of `0` the spring will reach its end value immediately. With really high values it might keep animating fractions of a pixel for a long time. Tweak this value if animations end abruptly or linger for too long. When tweaking this value you'll want to make big changes in order to see an effect (like adding/removing zeros).
 
 ### `spring (object)`
 

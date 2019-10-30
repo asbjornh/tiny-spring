@@ -24,7 +24,7 @@ test.cb('Config', t => {
   const s1 = Spring(0);
   const s2 = Spring(0, { stiffness: 500 });
   const s3 = Spring(0, { damping: 40 });
-  const s4 = Spring(0, { precision: 20 });
+  const s4 = Spring(0, { precision: 0.01 });
 
   s1.onUpdate(v => (v1 = v));
   s2.onUpdate(v => (v2 = v));

@@ -1,6 +1,6 @@
 export default function Spring(
   initialPosition = 0,
-  { stiffness = 200, damping = 10, precision = 0.1 } = {}
+  { stiffness = 200, damping = 10, precision = 100 } = {}
 ) {
   let position = initialPosition;
   let endPosition = 0;
@@ -10,16 +10,14 @@ export default function Spring(
   let raf;
 
   const interpolate = () => {
-    const springForce = stiffness * (endPosition - position);
-    const dampingForce = damping * velocity;
-    const acceleration = springForce - dampingForce;
-
+    const distance = endPosition - position;
+    const acceleration = stiffness * distance - damping * velocity;
     const newVelocity = velocity + acceleration * secPerFrame;
     const newPosition = position + newVelocity * secPerFrame;
 
     const isComplete =
-      Math.abs(newVelocity) < precision &&
-      Math.abs(newPosition - endPosition) < precision;
+      Math.abs(newVelocity) < 1 / precision &&
+      Math.abs(newPosition - endPosition) < 1 / precision;
 
     position = isComplete ? endPosition : newPosition;
     velocity = newVelocity;
