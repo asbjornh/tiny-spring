@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+- Adds repo field to `package.json`
+
 ## 0.3.0
 
 - Fixes fast, consecutive updates animating way too fast
