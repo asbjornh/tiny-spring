@@ -1,7 +1,8 @@
 # tiny-spring
 
 [![npm version](https://img.shields.io/npm/v/tiny-spring)](https://npmjs.com/package/tiny-spring)
-![](https://img.shields.io/bundlephobia/minzip/tiny-spring)
+![](https://img.shields.io/badge/dependencies-zero-green)
+![](https://img.shields.io/bundlephobia/min/tiny-spring)
 
 Simple spring dynamics for physics-driven animations. Also it's tiny (2kB before minification and gzip).
 
