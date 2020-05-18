@@ -10,7 +10,7 @@ Simple spring dynamics for physics-driven animations. Also it's tiny (2kB before
 npm install tiny-spring
 ```
 
-This small library helps you interpolate values using [spring dynamics](https://en.wikipedia.org/wiki/Harmonic_oscillator). There's no DOM-stuff or framework specifics included so you can use with whatever framework or library you want.
+This small library helps you interpolate values using [spring dynamics](https://en.wikipedia.org/wiki/Harmonic_oscillator). There's no DOM-stuff or framework specifics included so you can use it with whatever framework or library you want.
 
 If you're using `React.js`, there is [use-spring-effect](https://www.npmjs.com/package/use-spring-effect) which uses `tiny-spring` internally.
 
@@ -67,7 +67,7 @@ Used to determine when to stop animating. With a precision of `0` the spring wil
 
 **`onUpdate(fn: (val: number): void)`**
 
-Add a callback which will be called every time the value of the spring changes. This method is how you make animations happen.
+Add a callback which will be called every time the value of the spring changes.
 
 **NOTE**: `spring` only supports one callback, so calling this method more than once results in previously attached callbacks being overwritten.
 
