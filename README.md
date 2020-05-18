@@ -10,11 +10,9 @@ Simple spring dynamics for physics-driven animations. Also it's tiny (2kB before
 npm install tiny-spring
 ```
 
-This small library exposes a `String` class that can be used to interpolate between values using spring dynamics.
+This small library helps you interpolate values using [spring dynamics](https://en.wikipedia.org/wiki/Harmonic_oscillator). There's no DOM-stuff or framework specifics included so you can use with whatever framework or library you want.
 
-There are no DOM-methods or other framework-specific things included, which means you can use with whatever framework you want.
-
-If you want to use this with `React.js`, there is [use-spring-effect](https://www.npmjs.com/package/use-spring-effect) which uses `tiny-spring` internally.
+If you're using `React.js`, there is [use-spring-effect](https://www.npmjs.com/package/use-spring-effect) which uses `tiny-spring` internally.
 
 ## Browser support
 
@@ -49,7 +47,7 @@ spring.destroy();
 
 ### `Spring(initialValue: number, config: SpringConfig): spring`
 
-Returns a new `spring`.
+A factory function that returns a new `spring` object.
 
 ### `SpringConfig (object)`
 
@@ -59,7 +57,7 @@ Stiffness controls how "fast" your animation will be. Higher values result in fa
 
 **`damping: number = 10`**
 
-Damping controls how much friction is applied to the spring. You can think about this as how "wobbly" the resulting motion is. Lower values result in more wobbly-ness.
+Damping controls how much friction is applied to the spring. You can think of this as how "wobbly" the resulting motion is. Lower values result in more wobblyness.
 
 **`precision: number = 100`**
 
@@ -71,7 +69,7 @@ Used to determine when to stop animating. With a precision of `0` the spring wil
 
 Add a callback which will be called every time the value of the spring changes. This method is how you make animations happen.
 
-**NOTE**: `Spring` only has one callback, so calling this method more than once means only the last callback will be executed.
+**NOTE**: `spring` only supports one callback, so calling this method more than once results in previously attached callbacks being overwritten.
 
 ```js
 spring.onUpdate(value => {
@@ -89,4 +87,4 @@ Start animating to `value` from the current value of the spring.
 
 **`destroy()`**
 
-Aborts animation and removes any callbacks.
+Aborts animation and removes the callback.

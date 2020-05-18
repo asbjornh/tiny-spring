@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2
+
+- Fixes typos and updates things in README.md
+
 ## 0.3.1
 
 - Adds repo field to `package.json`
