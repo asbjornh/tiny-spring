@@ -9,6 +9,10 @@ spring.onUpdate(val => {
   box.style.transform = `translateX(${val}px) rotate(${val / 3}deg)`;
 });
 
+spring.onComplete(() => {
+  console.log('spring completed!');
+});
+
 let value = 0;
 button.addEventListener('click', () => {
   value = value === 0 ? 300 : 0;
@@ -20,6 +24,10 @@ const spring2 = Spring(0, { stiffness: 50 });
 
 spring2.onUpdate(val => {
   box2.style.transform = `translateX(${val}px)`;
+});
+
+spring2.onComplete(() => {
+  console.log('spring2 completed!');
 });
 
 window.addEventListener('mousemove', e => {
