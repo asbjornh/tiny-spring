@@ -65,7 +65,7 @@ Used to determine when to stop animating. With a precision of `0` the spring wil
 
 ### `spring (object)`
 
-**`onUpdate(fn: (val: number): void)`**
+**`onUpdate(fn: (value: number): void)`**
 
 Add a callback which will be called every time the value of the spring changes.
 
@@ -73,6 +73,18 @@ Add a callback which will be called every time the value of the spring changes.
 
 ```js
 spring.onUpdate(value => {
+  /* do something with value */
+});
+```
+
+**`onComplete(fn: (value: number): void)`**
+
+Add a callback which will be called once the transition is done.
+
+**NOTE**: `spring` only supports one callback, so calling this method more than once results in previously attached callbacks being overwritten.
+
+```js
+spring.onComplete(value => {
   /* do something with value */
 });
 ```

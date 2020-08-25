@@ -7,6 +7,7 @@ export default function Spring(
   let secPerFrame = 1 / 60;
   let velocity = 0;
   let onUpdate = v => {};
+  let onComplete = v => {};
   let raf;
 
   const interpolate = () => {
@@ -24,6 +25,7 @@ export default function Spring(
     onUpdate(position);
 
     if (!isComplete) raf = requestAnimationFrame(interpolate);
+    else onComplete(position);
   };
 
   return {
@@ -41,9 +43,14 @@ export default function Spring(
       onUpdate = fn;
       fn(position);
     },
+    onComplete: (fn = v => {}) => {
+      onComplete = fn;
+      fn(position);
+    },
     destroy: () => {
       cancelAnimationFrame(raf);
       onUpdate = () => {};
+      onComplete = () => {};
     }
   };
 }
