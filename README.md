@@ -77,14 +77,14 @@ spring.onUpdate(value => {
 });
 ```
 
-**`onComplete(fn: (value: number): void)`**
+**`onRest(fn: (value: number): void)`**
 
-Add a callback which will be called once the transition is done.
+Add a callback which will be called when the spring comes to a rest.
 
 **NOTE**: `spring` only supports one callback, so calling this method more than once results in previously attached callbacks being overwritten.
 
 ```js
-spring.onComplete(value => {
+spring.onRest(value => {
   /* do something with value */
 });
 ```
