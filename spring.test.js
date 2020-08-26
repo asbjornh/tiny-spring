@@ -87,11 +87,11 @@ test.cb('onUpdate', t => {
   }, 2000);
 });
 
-test.cb('onComplete', t => {
+test.cb('onRest', t => {
   const spring = Spring();
   let completed = false;
 
-  spring.onComplete(v => (completed = true));
+  spring.onRest(v => (completed = true));
 
   setTimeout(() => {
     t.is(true, completed);

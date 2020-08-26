@@ -9,7 +9,7 @@ spring.onUpdate(val => {
   box.style.transform = `translateX(${val}px) rotate(${val / 3}deg)`;
 });
 
-spring.onComplete(() => {
+spring.onRest(() => {
   console.log('spring completed!');
 });
 
@@ -26,7 +26,7 @@ spring2.onUpdate(val => {
   box2.style.transform = `translateX(${val}px)`;
 });
 
-spring2.onComplete(() => {
+spring2.onRest(() => {
   console.log('spring2 completed!');
 });
 
