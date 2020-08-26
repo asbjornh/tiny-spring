@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.0
+
+- No breaking changes (it seemed about time to properly semver this)
+- Adds `onRest` callback
+
 ## 0.3.2
 
 - Fixes typos and updates things in README.md
