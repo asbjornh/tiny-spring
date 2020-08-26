@@ -81,10 +81,10 @@ test.cb('onUpdate', t => {
   setTimeout(() => {
     t.is(true, values.length > 50);
     t.is(true, values.every(v => typeof v === 'number'));
-    t.is(true, values[0] !== values[1]);
-    t.is(true, values.slice(-1)[0] === endValue);
+    t.not(values[0], values[1]);
+    t.is(endValue, values.slice(-1)[0]);
     t.end();
-  }, 2000);
+  }, 2500);
 });
 
 test.cb('onRest', t => {
@@ -92,9 +92,10 @@ test.cb('onRest', t => {
   let completed = false;
 
   spring.onRest(v => (completed = true));
+  spring.transitionTo(10);
 
   setTimeout(() => {
     t.is(true, completed);
     t.end();
-  }, 1000);
+  }, 2000);
 });
